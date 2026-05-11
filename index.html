@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Mundo Digital em Família — 16 de Junho</title>
+<title>Mundo Digital em Família</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
@@ -21,314 +21,89 @@
     --success: #3A7D5A;
     --success-bg: #E8F5EE;
   }
-
   * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'DM Sans', sans-serif; background: var(--cream); color: var(--navy); min-height: 100vh; }
 
-  body {
-    font-family: 'DM Sans', sans-serif;
-    background: var(--cream);
-    color: var(--navy);
-    min-height: 100vh;
-  }
-
-  /* ── NAV ── */
   nav {
-    background: var(--warm-white);
-    border-bottom: 1px solid var(--sand);
-    padding: 0 2rem;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    height: 56px;
-    position: sticky;
-    top: 0;
-    z-index: 100;
+    background: var(--warm-white); border-bottom: 1px solid var(--sand);
+    padding: 0 2rem; display: flex; align-items: center; justify-content: space-between;
+    height: 56px; position: sticky; top: 0; z-index: 100;
   }
-  .nav-logo {
-    font-family: 'Playfair Display', serif;
-    font-size: 17px;
-    color: var(--navy);
-    display: flex;
-    align-items: center;
-    gap: 8px;
-  }
+  .nav-logo { font-family: 'Playfair Display', serif; font-size: 17px; color: var(--navy); display: flex; align-items: center; gap: 8px; }
   .nav-logo span { color: var(--terracotta); }
-  .nav-tabs {
-    display: flex;
-    gap: 4px;
-  }
-  .nav-tab {
-    padding: 6px 16px;
-    border-radius: 8px;
-    font-size: 13px;
-    font-weight: 400;
-    background: transparent;
-    border: none;
-    color: var(--muted);
-    cursor: pointer;
-    transition: all 0.15s;
-  }
-  .nav-tab.active {
-    background: var(--navy);
-    color: white;
-    font-weight: 500;
-  }
+  .nav-tabs { display: flex; gap: 4px; }
+  .nav-tab { padding: 6px 16px; border-radius: 8px; font-size: 13px; font-weight: 400; background: transparent; border: none; color: var(--muted); cursor: pointer; transition: all 0.15s; }
+  .nav-tab.active { background: var(--navy); color: white; font-weight: 500; }
   .nav-tab:hover:not(.active) { background: var(--sand); color: var(--navy); }
 
-  /* ── HERO ── */
-  .hero {
-    background: var(--navy);
-    color: white;
-    text-align: center;
-    padding: 4rem 2rem 3.5rem;
-    position: relative;
-    overflow: hidden;
-  }
-  .hero::before {
-    content: '';
-    position: absolute;
-    top: -60px; right: -60px;
-    width: 220px; height: 220px;
-    border-radius: 50%;
-    background: rgba(196,108,69,0.18);
-  }
-  .hero::after {
-    content: '';
-    position: absolute;
-    bottom: -80px; left: -40px;
-    width: 180px; height: 180px;
-    border-radius: 50%;
-    background: rgba(196,108,69,0.12);
-  }
-  .hero-badge {
-    display: inline-block;
-    background: rgba(196,108,69,0.25);
-    color: #F5C4A8;
-    font-size: 12px;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    padding: 5px 16px;
-    border-radius: 999px;
-    margin-bottom: 1.25rem;
-    border: 1px solid rgba(196,108,69,0.35);
-  }
-  .hero h1 {
-    font-family: 'Playfair Display', serif;
-    font-size: clamp(26px, 5vw, 40px);
-    font-weight: 600;
-    line-height: 1.25;
-    margin-bottom: 0.75rem;
-  }
+  .hero { background: var(--navy); color: white; text-align: center; padding: 4rem 2rem 3.5rem; position: relative; overflow: hidden; }
+  .hero::before { content: ''; position: absolute; top: -60px; right: -60px; width: 220px; height: 220px; border-radius: 50%; background: rgba(196,108,69,0.18); }
+  .hero::after { content: ''; position: absolute; bottom: -80px; left: -40px; width: 180px; height: 180px; border-radius: 50%; background: rgba(196,108,69,0.12); }
+  .hero-badge { display: inline-block; background: rgba(196,108,69,0.25); color: #F5C4A8; font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; padding: 5px 16px; border-radius: 999px; margin-bottom: 1.25rem; border: 1px solid rgba(196,108,69,0.35); }
+  .hero h1 { font-family: 'Playfair Display', serif; font-size: clamp(26px, 5vw, 40px); font-weight: 600; line-height: 1.25; margin-bottom: 0.75rem; }
   .hero h1 em { color: #E8A882; font-style: normal; }
-  .hero-subtitle {
-    font-size: 15px;
-    color: rgba(255,255,255,0.65);
-    max-width: 520px;
-    margin: 0 auto 2rem;
-    font-weight: 300;
-    line-height: 1.65;
-  }
-  .hero-cards {
-    display: flex;
-    justify-content: center;
-    gap: 12px;
-    flex-wrap: wrap;
-  }
-  .hero-card {
-    background: rgba(255,255,255,0.08);
-    border: 1px solid rgba(255,255,255,0.12);
-    border-radius: 12px;
-    padding: 14px 20px;
-    min-width: 120px;
-    text-align: left;
-  }
+  .hero-subtitle { font-size: 15px; color: rgba(255,255,255,0.65); max-width: 520px; margin: 0 auto 2rem; font-weight: 300; line-height: 1.65; }
+  .hero-cards { display: flex; justify-content: center; gap: 12px; flex-wrap: wrap; }
+  .hero-card { background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.12); border-radius: 12px; padding: 14px 20px; min-width: 120px; text-align: left; }
   .hero-card .hc-label { font-size: 11px; color: rgba(255,255,255,0.5); margin-bottom: 5px; text-transform: uppercase; letter-spacing: 0.06em; }
   .hero-card .hc-val { font-size: 16px; font-weight: 500; color: white; }
 
-  /* ── ALERT ── */
-  .alert-banner {
-    background: #FFF8F1;
-    border-bottom: 1px solid #F0D8C4;
-    padding: 10px 2rem;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    font-size: 13px;
-    color: var(--terracotta-dark);
-  }
-  .alert-banner svg { flex-shrink: 0; }
+  .alert-banner { background: #FFF8F1; border-bottom: 1px solid #F0D8C4; padding: 10px 2rem; display: flex; align-items: center; gap: 8px; font-size: 13px; color: var(--terracotta-dark); }
 
-  /* ── MAIN ── */
   main { max-width: 780px; margin: 0 auto; padding: 2.5rem 1.5rem 4rem; }
-
-  /* ── SECTION ── */
   .section { margin-bottom: 2rem; }
-  .section-title {
-    font-family: 'Playfair Display', serif;
-    font-size: 20px;
-    font-weight: 500;
-    margin-bottom: 1.25rem;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-  }
-  .section-title svg { color: var(--terracotta); }
+  .section-title { font-family: 'Playfair Display', serif; font-size: 20px; font-weight: 500; margin-bottom: 1.25rem; display: flex; align-items: center; gap: 10px; }
 
-  /* ── PROGRAM ── */
-  .program-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 12px;
-  }
-  .prog-card {
-    background: white;
-    border: 1px solid var(--sand);
-    border-radius: 14px;
-    padding: 1.1rem 1.25rem;
-    display: flex;
-    align-items: flex-start;
-    gap: 12px;
-    transition: border-color 0.15s, transform 0.15s;
-  }
+  .program-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 12px; }
+  .prog-card { background: white; border: 1px solid var(--sand); border-radius: 14px; padding: 1.1rem 1.25rem; display: flex; align-items: flex-start; gap: 12px; transition: border-color 0.15s, transform 0.15s; }
   .prog-card:hover { border-color: var(--terracotta); transform: translateY(-2px); }
-  .prog-icon {
-    width: 38px; height: 38px;
-    background: var(--terracotta-light);
-    border-radius: 10px;
-    display: flex; align-items: center; justify-content: center;
-    flex-shrink: 0;
-    font-size: 18px;
-  }
+  .prog-icon { width: 38px; height: 38px; background: var(--terracotta-light); border-radius: 10px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-size: 18px; }
   .prog-card .ptitle { font-size: 14px; font-weight: 500; margin-bottom: 3px; }
   .prog-card .pdesc { font-size: 12px; color: var(--muted); line-height: 1.5; }
 
-  /* ── WHAT TO BRING ── */
-  .bring-box {
-    background: var(--terracotta-light);
-    border: 1px solid #E0BBA8;
-    border-radius: 14px;
-    padding: 1.25rem 1.5rem;
-    display: flex;
-    align-items: center;
-    gap: 14px;
-  }
+  .bring-box { background: var(--terracotta-light); border: 1px solid #E0BBA8; border-radius: 14px; padding: 1.25rem 1.5rem; display: flex; align-items: center; gap: 14px; }
   .bring-icon { font-size: 28px; flex-shrink: 0; }
   .bring-box p { font-size: 14px; line-height: 1.65; color: var(--terracotta-dark); }
   .bring-box strong { color: var(--navy); }
 
-  /* ── FORM ── */
-  .form-card {
-    background: white;
-    border: 1px solid var(--sand);
-    border-radius: 18px;
-    padding: 2rem;
-  }
+  .form-card { background: white; border: 1px solid var(--sand); border-radius: 18px; padding: 2rem; }
   .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
   .form-group { margin-bottom: 1.1rem; }
-  .form-group label {
-    display: block;
-    font-size: 13px;
-    font-weight: 500;
-    color: var(--navy);
-    margin-bottom: 7px;
-  }
+  .form-group label { display: block; font-size: 13px; font-weight: 500; color: var(--navy); margin-bottom: 7px; }
   .form-group label .req { color: var(--terracotta); }
-  .form-group input,
-  .form-group select,
-  .form-group textarea {
-    width: 100%;
-    padding: 10px 14px;
-    border: 1.5px solid var(--sand);
-    border-radius: 10px;
-    font-size: 14px;
-    font-family: 'DM Sans', sans-serif;
-    color: var(--navy);
-    background: var(--cream);
-    outline: none;
-    transition: border-color 0.15s;
-  }
-  .form-group input:focus,
-  .form-group select:focus,
-  .form-group textarea:focus { border-color: var(--terracotta); background: white; }
+  .form-group input, .form-group select, .form-group textarea { width: 100%; padding: 10px 14px; border: 1.5px solid var(--sand); border-radius: 10px; font-size: 14px; font-family: 'DM Sans', sans-serif; color: var(--navy); background: var(--cream); outline: none; transition: border-color 0.15s; }
+  .form-group input:focus, .form-group select:focus, .form-group textarea:focus { border-color: var(--terracotta); background: white; }
   .form-group textarea { height: 90px; resize: vertical; }
 
   .check-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-top: 6px; }
-  .check-item {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    font-size: 13px;
-    cursor: pointer;
-    padding: 9px 12px;
-    border: 1.5px solid var(--sand);
-    border-radius: 9px;
-    transition: all 0.12s;
-    color: var(--navy);
-    user-select: none;
-  }
+  .check-item { display: flex; align-items: center; gap: 8px; font-size: 13px; cursor: pointer; padding: 9px 12px; border: 1.5px solid var(--sand); border-radius: 9px; transition: all 0.12s; color: var(--navy); user-select: none; }
   .check-item:hover { border-color: var(--terracotta); background: var(--terracotta-light); }
   .check-item input { accent-color: var(--terracotta); width: 15px; height: 15px; }
   .check-item.checked { border-color: var(--terracotta); background: var(--terracotta-light); }
 
-  .error-msg {
-    background: #FFF0ED;
-    border: 1px solid #F5B8A8;
-    color: #A84C2E;
-    border-radius: 8px;
-    padding: 9px 14px;
-    font-size: 13px;
-    margin-bottom: 1rem;
-    display: none;
-  }
+  .error-msg { background: #FFF0ED; border: 1px solid #F5B8A8; color: #A84C2E; border-radius: 8px; padding: 9px 14px; font-size: 13px; margin-bottom: 1rem; display: none; }
 
-  .btn-submit {
-    width: 100%;
-    padding: 14px;
-    background: var(--navy);
-    color: white;
-    border: none;
-    border-radius: 12px;
-    font-size: 15px;
-    font-weight: 500;
-    cursor: pointer;
-    font-family: 'DM Sans', sans-serif;
-    transition: background 0.15s, transform 0.1s;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 8px;
-  }
+  .btn-submit { width: 100%; padding: 14px; background: var(--navy); color: white; border: none; border-radius: 12px; font-size: 15px; font-weight: 500; cursor: pointer; font-family: 'DM Sans', sans-serif; transition: background 0.15s, transform 0.1s; display: flex; align-items: center; justify-content: center; gap: 8px; }
   .btn-submit:hover { background: var(--navy-light); }
   .btn-submit:active { transform: scale(0.98); }
+  .btn-submit:disabled { opacity: 0.6; cursor: not-allowed; }
 
-  .success-box {
-    background: var(--success-bg);
-    border: 1px solid #B6DEC8;
-    border-radius: 14px;
-    padding: 2rem;
-    text-align: center;
-    display: none;
-  }
+  .success-box { background: var(--success-bg); border: 1px solid #B6DEC8; border-radius: 14px; padding: 2rem; text-align: center; display: none; }
   .success-box .s-icon { font-size: 36px; margin-bottom: 0.75rem; }
   .success-box h3 { font-family: 'Playfair Display', serif; font-size: 20px; color: var(--success); margin-bottom: 0.5rem; }
   .success-box p { font-size: 14px; color: #4A7A60; }
 
-  /* ── ADMIN ── */
   #view-admin { display: none; }
-  .stats-row {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 12px;
-    margin-bottom: 1.5rem;
-  }
-  .stat-card {
-    background: white;
-    border: 1px solid var(--sand);
-    border-radius: 14px;
-    padding: 1rem 1.25rem;
-  }
+  .stats-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin-bottom: 1.5rem; }
+  .stat-card { background: white; border: 1px solid var(--sand); border-radius: 14px; padding: 1rem 1.25rem; }
   .stat-card .s-label { font-size: 12px; color: var(--muted); margin-bottom: 4px; text-transform: uppercase; letter-spacing: 0.05em; }
   .stat-card .s-val { font-size: 24px; font-weight: 500; color: var(--navy); }
+
+  .admin-actions { display: flex; gap: 10px; margin-bottom: 1.25rem; }
+  .btn-export { padding: 8px 18px; background: var(--terracotta); color: white; border: none; border-radius: 10px; font-family: 'DM Sans', sans-serif; font-size: 13px; font-weight: 500; cursor: pointer; display: flex; align-items: center; gap: 6px; }
+  .btn-export:hover { background: var(--terracotta-dark); }
+  .btn-refresh { padding: 8px 18px; background: white; color: var(--navy); border: 1px solid var(--sand); border-radius: 10px; font-family: 'DM Sans', sans-serif; font-size: 13px; font-weight: 500; cursor: pointer; }
+  .btn-refresh:hover { background: var(--cream); }
 
   .table-wrap { overflow-x: auto; border-radius: 14px; border: 1px solid var(--sand); }
   table { width: 100%; border-collapse: collapse; background: white; font-size: 13px; }
@@ -337,14 +112,7 @@
   td { padding: 11px 14px; border-bottom: 1px solid var(--sand); color: var(--navy); }
   tr:last-child td { border-bottom: none; }
   tr:hover td { background: var(--cream); }
-
-  .pill {
-    display: inline-block;
-    padding: 2px 10px;
-    border-radius: 999px;
-    font-size: 11px;
-    font-weight: 500;
-  }
+  .pill { display: inline-block; padding: 2px 10px; border-radius: 999px; font-size: 11px; font-weight: 500; }
   .pill-sim { background: #E8F5EE; color: #2D6B46; }
   .pill-nao { background: #F5EEE8; color: #6B4A2D; }
   .pill-talvez { background: #F0EDE8; color: #6B6050; }
@@ -352,15 +120,7 @@
   .empty-admin { text-align: center; padding: 3rem; color: var(--muted); font-size: 14px; }
   .empty-admin .e-icon { font-size: 40px; margin-bottom: 1rem; }
 
-  .admin-pwd {
-    background: white;
-    border: 1px solid var(--sand);
-    border-radius: 18px;
-    padding: 2rem;
-    text-align: center;
-    max-width: 380px;
-    margin: 2rem auto;
-  }
+  .admin-pwd { background: white; border: 1px solid var(--sand); border-radius: 18px; padding: 2rem; text-align: center; max-width: 380px; margin: 2rem auto; }
   .admin-pwd h3 { font-family: 'Playfair Display', serif; font-size: 18px; margin-bottom: 0.75rem; }
   .admin-pwd p { font-size: 13px; color: var(--muted); margin-bottom: 1.25rem; }
   .admin-pwd input { width: 100%; padding: 10px 14px; border: 1.5px solid var(--sand); border-radius: 10px; font-family: 'DM Sans', sans-serif; font-size: 14px; outline: none; transition: border-color 0.15s; }
@@ -369,15 +129,15 @@
   .btn-sm:hover { background: var(--navy-light); }
   .pwd-error { color: #A84C2E; font-size: 13px; margin-top: 8px; display: none; }
 
-  /* ── FOOTER ── */
-  footer {
-    text-align: center;
-    padding: 2rem;
-    font-size: 12px;
-    color: var(--sand-dark);
-    border-top: 1px solid var(--sand);
-    background: white;
-  }
+  .loading-overlay { text-align: center; padding: 2rem; color: var(--muted); font-size: 14px; }
+  .spinner { display: inline-block; width: 20px; height: 20px; border: 2px solid var(--sand); border-top-color: var(--terracotta); border-radius: 50%; animation: spin 0.8s linear infinite; margin-right: 8px; vertical-align: middle; }
+  @keyframes spin { to { transform: rotate(360deg); } }
+
+  .storage-badge { display: inline-flex; align-items: center; gap: 5px; background: #E8F5EE; color: #2D6B46; font-size: 11px; padding: 3px 10px; border-radius: 999px; margin-left: 8px; font-weight: 500; }
+  .dot-live { width: 6px; height: 6px; border-radius: 50%; background: #3A7D5A; animation: pulse 1.5s infinite; }
+  @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:0.4} }
+
+  footer { text-align: center; padding: 2rem; font-size: 12px; color: var(--sand-dark); border-top: 1px solid var(--sand); background: white; }
   footer span { color: var(--terracotta); }
 
   @media (max-width: 540px) {
@@ -391,7 +151,9 @@
 <body>
 
 <nav>
-  <div class="nav-logo">&#127774; Mundo <span>Digital</span></div>
+  <div class="nav-logo">🌴 Mundo <span>Digital</span>
+    <span class="storage-badge"><span class="dot-live"></span> Backend ativo</span>
+  </div>
   <div class="nav-tabs">
     <button class="nav-tab active" onclick="goTo('inscricao')">Inscrição</button>
     <button class="nav-tab" onclick="goTo('admin')">Administração</button>
@@ -399,7 +161,6 @@
 </nav>
 
 <div id="view-inscricao">
-
   <div class="hero">
     <div class="hero-badge">16 de junho · Evento familiar</div>
     <h1>Mundo Digital<br>para a <em>Família</em></h1>
@@ -413,37 +174,18 @@
   </div>
 
   <div class="alert-banner">
-    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
-    Local a confirmar — a aula poderá ser na casa da Tia Leila. Vamos avisar assim que confirmar!
+    ⚠️ Local a confirmar — a aula poderá ser na casa da Tia Leila. Vamos avisar assim que confirmar!
   </div>
 
   <main>
     <section class="section">
-      <h2 class="section-title">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 11 12 14 22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
-        O que vamos aprender
-      </h2>
+      <h2 class="section-title">📋 O que vamos aprender</h2>
       <div class="program-grid">
-        <div class="prog-card">
-          <div class="prog-icon">🤖</div>
-          <div><div class="ptitle">Inteligência artificial</div><div class="pdesc">O que é, como usar no dia a dia e onde já aparece sem perceber</div></div>
-        </div>
-        <div class="prog-card">
-          <div class="prog-icon">📱</div>
-          <div><div class="ptitle">Redes sociais</div><div class="pdesc">Como usar com segurança, privacidade e sem cair em armadilhas</div></div>
-        </div>
-        <div class="prog-card">
-          <div class="prog-icon">🔐</div>
-          <div><div class="ptitle">Senhas seguras</div><div class="pdesc">Como criar, guardar e não esquecer nunca mais as suas passwords</div></div>
-        </div>
-        <div class="prog-card">
-          <div class="prog-icon">🛡️</div>
-          <div><div class="ptitle">Golpes online</div><div class="pdesc">Como identificar fraudes e proteger os seus dados na internet</div></div>
-        </div>
-        <div class="prog-card">
-          <div class="prog-icon">🌐</div>
-          <div><div class="ptitle">Dicas de internet</div><div class="pdesc">Truques essenciais para navegar melhor e com mais confiança</div></div>
-        </div>
+        <div class="prog-card"><div class="prog-icon">🤖</div><div><div class="ptitle">Inteligência artificial</div><div class="pdesc">O que é, como usar no dia a dia e onde já aparece sem perceber</div></div></div>
+        <div class="prog-card"><div class="prog-icon">📱</div><div><div class="ptitle">Redes sociais</div><div class="pdesc">Como usar com segurança, privacidade e sem cair em armadilhas</div></div></div>
+        <div class="prog-card"><div class="prog-icon">🔐</div><div><div class="ptitle">Senhas seguras</div><div class="pdesc">Como criar, guardar e não esquecer nunca mais as suas passwords</div></div></div>
+        <div class="prog-card"><div class="prog-icon">🛡️</div><div><div class="ptitle">Golpes online</div><div class="pdesc">Como identificar fraudes e proteger os seus dados na internet</div></div></div>
+        <div class="prog-card"><div class="prog-icon">🌐</div><div><div class="ptitle">Dicas de internet</div><div class="pdesc">Truques essenciais para navegar melhor e com mais confiança</div></div></div>
       </div>
     </section>
 
@@ -455,19 +197,13 @@
     </section>
 
     <section class="section">
-      <h2 class="section-title">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg>
-        Formulário de inscrição
-      </h2>
-
+      <h2 class="section-title">✏️ Formulário de inscrição</h2>
       <div class="form-card">
-
         <div class="success-box" id="success-box">
           <div class="s-icon">🎉</div>
           <h3 id="success-name">Inscrição confirmada!</h3>
           <p>Obrigada por te inscreveres. Vamos enviar os detalhes assim que o local for confirmado.</p>
         </div>
-
         <div id="form-content">
           <div class="form-row">
             <div class="form-group">
@@ -479,12 +215,10 @@
               <input type="number" id="f-idade" min="5" max="99" placeholder="Ex: 52">
             </div>
           </div>
-
           <div class="form-group">
             <label>Telemóvel / WhatsApp <span class="req">*</span></label>
             <input type="tel" id="f-tel" placeholder="Ex: +351 910 000 000">
           </div>
-
           <div class="form-group">
             <label>Como se descreve com tecnologia? <span class="req">*</span></label>
             <select id="f-nivel">
@@ -495,7 +229,6 @@
               <option value="avancado">🌳 Avançado — já me sinto bastante confortável</option>
             </select>
           </div>
-
           <div class="form-group">
             <label>Tens computador disponível para trazer?</label>
             <select id="f-pc">
@@ -504,52 +237,31 @@
               <option value="talvez">🤔 Não tenho a certeza</option>
             </select>
           </div>
-
           <div class="form-group">
             <label>Tópicos que mais te interessam</label>
             <div class="check-grid" id="check-grid">
-              <label class="check-item" onclick="toggleCheck(this)">
-                <input type="checkbox" value="ia"> 🤖 Inteligência artificial
-              </label>
-              <label class="check-item" onclick="toggleCheck(this)">
-                <input type="checkbox" value="redes"> 📱 Redes sociais
-              </label>
-              <label class="check-item" onclick="toggleCheck(this)">
-                <input type="checkbox" value="senhas"> 🔐 Senhas seguras
-              </label>
-              <label class="check-item" onclick="toggleCheck(this)">
-                <input type="checkbox" value="golpes"> 🛡️ Golpes online
-              </label>
-              <label class="check-item" onclick="toggleCheck(this)">
-                <input type="checkbox" value="geral"> 🌐 Dicas gerais
-              </label>
+              <label class="check-item" onclick="toggleCheck(this)"><input type="checkbox" value="ia"> 🤖 Inteligência artificial</label>
+              <label class="check-item" onclick="toggleCheck(this)"><input type="checkbox" value="redes"> 📱 Redes sociais</label>
+              <label class="check-item" onclick="toggleCheck(this)"><input type="checkbox" value="senhas"> 🔐 Senhas seguras</label>
+              <label class="check-item" onclick="toggleCheck(this)"><input type="checkbox" value="golpes"> 🛡️ Golpes online</label>
+              <label class="check-item" onclick="toggleCheck(this)"><input type="checkbox" value="geral"> 🌐 Dicas gerais</label>
             </div>
           </div>
-
           <div class="form-group">
             <label>Tens alguma dúvida ou tema específico que gostarias que abordássemos?</label>
             <textarea id="f-duvida" placeholder="Escreve à vontade... qualquer pergunta é bem-vinda!"></textarea>
           </div>
-
-          <div class="error-msg" id="f-erro">
-            Por favor preenche os campos obrigatórios: nome, idade, telemóvel e nível de conforto com tecnologia.
-          </div>
-
-          <button class="btn-submit" onclick="submeter()">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
-            Confirmar a minha inscrição
+          <div class="error-msg" id="f-erro">Por favor preenche os campos obrigatórios: nome, idade, telemóvel e nível de conforto com tecnologia.</div>
+          <button class="btn-submit" id="btn-sub" onclick="submeter()">
+            ✈️ Confirmar a minha inscrição
           </button>
         </div>
-
       </div>
     </section>
   </main>
-
 </div>
 
-<!-- ADMIN -->
 <div id="view-admin" style="display:none">
-
   <div id="admin-login">
     <main>
       <div class="admin-pwd">
@@ -561,119 +273,144 @@
       </div>
     </main>
   </div>
-
   <div id="admin-painel" style="display:none">
     <main>
       <div class="stats-row">
-        <div class="stat-card"><div class="s-label">Inscritos</div><div class="s-val" id="st-total">0</div></div>
-        <div class="stat-card"><div class="s-label">Total arrecadado</div><div class="s-val" id="st-euros">0€</div></div>
-        <div class="stat-card"><div class="s-label">Com computador</div><div class="s-val" id="st-pc">0</div></div>
+        <div class="stat-card"><div class="s-label">Inscritos</div><div class="s-val" id="st-total">—</div></div>
+        <div class="stat-card"><div class="s-label">Total arrecadado</div><div class="s-val" id="st-euros">—</div></div>
+        <div class="stat-card"><div class="s-label">Com computador</div><div class="s-val" id="st-pc">—</div></div>
       </div>
-
-      <div class="table-wrap">
-        <table>
-          <thead>
-            <tr>
-              <th>#</th>
-              <th>Nome</th>
-              <th>Idade</th>
-              <th>Telemóvel</th>
-              <th>Nível</th>
-              <th>Computador</th>
-              <th>Dúvida / Observação</th>
-            </tr>
-          </thead>
-          <tbody id="admin-tbody">
-            <tr><td colspan="7" class="empty-admin"><div class="e-icon">📋</div>Ainda sem inscrições. Partilha o link com a família!</td></tr>
-          </tbody>
-        </table>
+      <div class="admin-actions">
+        <button class="btn-refresh" onclick="renderAdmin()">🔄 Atualizar</button>
+        <button class="btn-export" onclick="exportCSV()">⬇️ Exportar CSV</button>
+      </div>
+      <div id="admin-table-area">
+        <div class="loading-overlay"><span class="spinner"></span> A carregar inscrições...</div>
       </div>
     </main>
   </div>
-
 </div>
 
-<footer>
-  Feito com ❤️ por <span>Ester</span> · Mundo Digital em Família · Junho 2025
-</footer>
+<footer>Feito com ❤️ por <span>Ester</span> · Mundo Digital em Família · Junho 2025</footer>
 
 <script>
-  var inscritos = JSON.parse(localStorage.getItem('md_inscritos') || '[]');
-  var SENHA = 'familia2025';
+var SENHA = 'familia2025';
+var STORAGE_KEY = 'md_inscritos_v2';
 
-  function toggleCheck(el) {
-    var cb = el.querySelector('input');
-    cb.checked = !cb.checked;
-    el.classList.toggle('checked', cb.checked);
-    event.preventDefault();
-  }
+function toggleCheck(el) {
+  var cb = el.querySelector('input');
+  cb.checked = !cb.checked;
+  el.classList.toggle('checked', cb.checked);
+  event.preventDefault();
+}
 
-  function goTo(tab) {
-    document.getElementById('view-inscricao').style.display = tab === 'inscricao' ? 'block' : 'none';
-    document.getElementById('view-admin').style.display = tab === 'admin' ? 'block' : 'none';
-    document.querySelectorAll('.nav-tab').forEach(function(b, i) {
-      b.classList.toggle('active', (i === 0 && tab === 'inscricao') || (i === 1 && tab === 'admin'));
-    });
-    if (tab === 'admin') renderAdmin();
-  }
+function goTo(tab) {
+  document.getElementById('view-inscricao').style.display = tab === 'inscricao' ? 'block' : 'none';
+  document.getElementById('view-admin').style.display = tab === 'admin' ? 'block' : 'none';
+  document.querySelectorAll('.nav-tab').forEach(function(b, i) {
+    b.classList.toggle('active', (i === 0 && tab === 'inscricao') || (i === 1 && tab === 'admin'));
+  });
+}
 
-  function submeter() {
-    var nome = document.getElementById('f-nome').value.trim();
-    var idade = document.getElementById('f-idade').value.trim();
-    var tel = document.getElementById('f-tel').value.trim();
-    var nivel = document.getElementById('f-nivel').value;
-    var pc = document.getElementById('f-pc').value;
-    var duvida = document.getElementById('f-duvida').value.trim();
-    var topicos = [];
-    document.querySelectorAll('#check-grid input:checked').forEach(function(c) { topicos.push(c.value); });
+async function getInscritos() {
+  try {
+    var result = await window.storage.get(STORAGE_KEY, true);
+    return result ? JSON.parse(result.value) : [];
+  } catch(e) { return []; }
+}
 
-    var erro = document.getElementById('f-erro');
-    if (!nome || !idade || !tel || !nivel) { erro.style.display = 'block'; return; }
-    erro.style.display = 'none';
+async function saveInscritos(arr) {
+  await window.storage.set(STORAGE_KEY, JSON.stringify(arr), true);
+}
 
-    var reg = { nome: nome, idade: idade, tel: tel, nivel: nivel, pc: pc, topicos: topicos, duvida: duvida, ts: new Date().toLocaleString('pt-PT') };
+async function submeter() {
+  var nome = document.getElementById('f-nome').value.trim();
+  var idade = document.getElementById('f-idade').value.trim();
+  var tel = document.getElementById('f-tel').value.trim();
+  var nivel = document.getElementById('f-nivel').value;
+  var pc = document.getElementById('f-pc').value;
+  var duvida = document.getElementById('f-duvida').value.trim();
+  var topicos = [];
+  document.querySelectorAll('#check-grid input:checked').forEach(function(c) { topicos.push(c.value); });
+
+  var erro = document.getElementById('f-erro');
+  if (!nome || !idade || !tel || !nivel) { erro.style.display = 'block'; return; }
+  erro.style.display = 'none';
+
+  var btn = document.getElementById('btn-sub');
+  btn.disabled = true;
+  btn.innerHTML = '<span class="spinner"></span> A guardar...';
+
+  try {
+    var inscritos = await getInscritos();
+    var reg = { id: Date.now(), nome: nome, idade: idade, tel: tel, nivel: nivel, pc: pc, topicos: topicos, duvida: duvida, ts: new Date().toLocaleString('pt-PT') };
     inscritos.push(reg);
-    localStorage.setItem('md_inscritos', JSON.stringify(inscritos));
-
+    await saveInscritos(inscritos);
     document.getElementById('form-content').style.display = 'none';
     var sb = document.getElementById('success-box');
     sb.style.display = 'block';
     document.getElementById('success-name').textContent = 'Inscrição confirmada, ' + nome.split(' ')[0] + '! 🎉';
+  } catch(e) {
+    btn.disabled = false;
+    btn.innerHTML = '✈️ Confirmar a minha inscrição';
+    erro.textContent = 'Erro ao guardar. Tenta novamente.';
+    erro.style.display = 'block';
+  }
+}
+
+function verificarPwd() {
+  var v = document.getElementById('pwd-input').value;
+  if (v === SENHA) {
+    document.getElementById('admin-login').style.display = 'none';
+    document.getElementById('admin-painel').style.display = 'block';
+    renderAdmin();
+  } else {
+    document.getElementById('pwd-error').style.display = 'block';
+  }
+}
+
+function nivelLabel(n) {
+  var m = { iniciante: 'Iniciante', basico: 'Básico', medio: 'Médio', avancado: 'Avançado' };
+  return m[n] || n;
+}
+
+async function renderAdmin() {
+  var area = document.getElementById('admin-table-area');
+  area.innerHTML = '<div class="loading-overlay"><span class="spinner"></span> A carregar inscrições...</div>';
+
+  var inscritos = await getInscritos();
+
+  document.getElementById('st-total').textContent = inscritos.length;
+  document.getElementById('st-euros').textContent = (inscritos.length * 5) + '€';
+  var comPc = inscritos.filter(function(i) { return i.pc === 'sim'; }).length;
+  document.getElementById('st-pc').textContent = comPc;
+
+  if (inscritos.length === 0) {
+    area.innerHTML = '<div class="table-wrap"><table><thead><tr><th>#</th><th>Nome</th><th>Idade</th><th>Telemóvel</th><th>Nível</th><th>Computador</th><th>Dúvida</th></tr></thead><tbody><tr><td colspan="7" class="empty-admin"><div class="e-icon">📋</div>Ainda sem inscrições. Partilha o link com a família!</td></tr></tbody></table></div>';
+    return;
   }
 
-  function verificarPwd() {
-    var v = document.getElementById('pwd-input').value;
-    if (v === SENHA) {
-      document.getElementById('admin-login').style.display = 'none';
-      document.getElementById('admin-painel').style.display = 'block';
-      renderAdmin();
-    } else {
-      document.getElementById('pwd-error').style.display = 'block';
-    }
-  }
+  var rows = inscritos.map(function(p, i) {
+    var pill = p.pc === 'sim' ? '<span class="pill pill-sim">Sim</span>' : p.pc === 'nao' ? '<span class="pill pill-nao">Não</span>' : '<span class="pill pill-talvez">Talvez</span>';
+    return '<tr><td style="color:var(--muted)">' + (i+1) + '</td><td style="font-weight:500">' + p.nome + '</td><td>' + p.idade + '</td><td>' + p.tel + '</td><td>' + nivelLabel(p.nivel) + '</td><td>' + pill + '</td><td style="color:var(--muted);font-size:12px">' + (p.duvida || '—') + '</td></tr>';
+  }).join('');
 
-  function nivelLabel(n) {
-    var m = { iniciante: 'Iniciante', basico: 'Básico', medio: 'Médio', avancado: 'Avançado' };
-    return m[n] || n;
-  }
+  area.innerHTML = '<div class="table-wrap"><table><thead><tr><th>#</th><th>Nome</th><th>Idade</th><th>Telemóvel</th><th>Nível</th><th>Computador</th><th>Dúvida / Obs.</th></tr></thead><tbody>' + rows + '</tbody></table></div>';
+}
 
-  function renderAdmin() {
-    inscritos = JSON.parse(localStorage.getItem('md_inscritos') || '[]');
-    document.getElementById('st-total').textContent = inscritos.length;
-    document.getElementById('st-euros').textContent = (inscritos.length * 5) + '€';
-    var comPc = inscritos.filter(function(i) { return i.pc === 'sim'; }).length;
-    document.getElementById('st-pc').textContent = comPc;
-
-    var tbody = document.getElementById('admin-tbody');
-    if (inscritos.length === 0) {
-      tbody.innerHTML = '<tr><td colspan="7" class="empty-admin"><div class="e-icon">📋</div>Ainda sem inscrições. Partilha o link com a família!</td></tr>';
-      return;
-    }
-    tbody.innerHTML = inscritos.map(function(p, i) {
-      var pill = p.pc === 'sim' ? '<span class="pill pill-sim">Sim</span>' : p.pc === 'nao' ? '<span class="pill pill-nao">Não</span>' : '<span class="pill pill-talvez">Talvez</span>';
-      return '<tr><td style="color:var(--muted)">' + (i+1) + '</td><td style="font-weight:500">' + p.nome + '</td><td>' + p.idade + '</td><td>' + p.tel + '</td><td>' + nivelLabel(p.nivel) + '</td><td>' + pill + '</td><td style="color:var(--muted);font-size:12px">' + (p.duvida || '—') + '</td></tr>';
-    }).join('');
-  }
+async function exportCSV() {
+  var inscritos = await getInscritos();
+  if (inscritos.length === 0) { alert('Ainda não há inscrições para exportar.'); return; }
+  var header = 'Nome,Idade,Telemóvel,Nível,Computador,Tópicos,Dúvida,Data\n';
+  var rows = inscritos.map(function(p) {
+    return [p.nome, p.idade, p.tel, nivelLabel(p.nivel), p.pc, (p.topicos||[]).join(';'), p.duvida||'', p.ts].map(function(v){ return '"'+String(v).replace(/"/g,'""')+'"'; }).join(',');
+  }).join('\n');
+  var blob = new Blob(['\ufeff'+header+rows], {type:'text/csv;charset=utf-8;'});
+  var a = document.createElement('a');
+  a.href = URL.createObjectURL(blob);
+  a.download = 'inscritos_mundo_digital.csv';
+  a.click();
+}
 </script>
 </body>
 </html>
